@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using View_Component_Practice.Models;
 
 namespace View_Component_Practice.ViewComponents
 {
-    public class StudentListViewComponent : ViewComponent
+    public class StudentDetailsViewComponent : ViewComponent
     {
-        public List<Student> students;
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int id)
         {
-            students = Student.GetStudentLists();
-            return View(students);
+            return View(Student.GetStudentLists().FirstOrDefault(x => x.ID == id));
         }
     }
 }

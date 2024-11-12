@@ -5,13 +5,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using View_Component_Practice.Models;
 
 namespace View_Component_Practice.Controllers
 {
     public class StudentController : Controller
     {
-        
         public IActionResult Students()
+        {
+            return View();
+        }
+        public IActionResult Details(int id)
         {
             return View();
         }
