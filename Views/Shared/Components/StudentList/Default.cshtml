@@ -1,0 +1,32 @@
+@using View_Component_Practice.Models
+@model List<Student>
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Student List</h2>
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.ID</td>
+                    <td>@student.Name</td>
+                    <td>@student.Age</td>
+                    <td>@student.Email</td>
+                    <td>@student.Phone</td>
+                    <td>
+                        <a href="Student/Details/@student.ID">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
